@@ -9,9 +9,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let prod of products'
-            (click)='selectCollectible(prod.id)'>
-            <td>{{prod.name | productNameTransform }}</td>
+        <tr *ngFor='let prod of products'>
+            <td (click)='selectCollectible(prod.id)'>{{prod.name | productNameTransform }}</td>
             <td>{{prod.description}}</td>
             <td><ai-star [rating]='prod.rating' (starClicked)='onStarClicked($event)'></ai-star></td>
         </tr>

@@ -12,7 +12,7 @@ require("rxjs/Rx");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var collection_component_1 = require("./collection/collection.component");
-var producTransform_pipe_1 = require("./shared/producTransform.pipe");
+var producTransform_pipe_1 = require("./shared/pipes/producTransform.pipe");
 var star_component_1 = require("./shared/star.component");
 var app_routing_module_1 = require("./shared/app-routing.module");
 var welcome_component_1 = require("./home/welcome.component");
