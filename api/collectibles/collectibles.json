@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "TV Phillips 25", "description": "Special TV for big events", "rating": 3 },
+    { "id": 2, "name": "DVD Player Sony", "description": "DVD to watch movies.", "rating": 2 },
+    { "id": 3, "name": "Product 3", "description": "Description 3.", "rating": 4 },
+    { "id": 4, "name": "PlayStation 4", "description": "PS 4 Game console.", "rating": 1 }
+]

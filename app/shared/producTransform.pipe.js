@@ -6,19 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var collectible_service_1 = require("./shared/collectible.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = 'ACME Product Management';
+var ProductTransform = (function () {
+    function ProductTransform() {
     }
-    return AppComponent;
+    ProductTransform.prototype.transform = function (value, args) {
+        return value.toLocaleUpperCase();
+    };
+    return ProductTransform;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'pm-app',
-        template: "\n        <h1>Angular2: {{pageTitle}}</h1>\n        <app-collection></app-collection>\n    ",
-        providers: [collectible_service_1.CollectibleService]
+ProductTransform = __decorate([
+    core_1.Pipe({
+        name: 'productNameTransform'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ProductTransform);
+exports.ProductTransform = ProductTransform;
+//# sourceMappingURL=producTransform.pipe.js.map

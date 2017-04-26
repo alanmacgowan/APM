@@ -1,0 +1,20 @@
+<div>
+{{pageTitle}}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let prod of products'>
+            <td>{{prod.name | productNameTransform }}</td>
+            <td>{{prod.description}}</td>
+            <td><ai-star [rating]='prod.rating' (starClicked)='onStarClicked($event)'></ai-star></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
