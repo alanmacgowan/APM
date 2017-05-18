@@ -6,7 +6,11 @@ import { CollectibleService } from "./shared/collectible.service";
     selector: 'pm-app',
     template: `
         <h1>Angular2: {{pageTitle}}</h1>
-        <app-collection></app-collection>
+            <nav>
+                <a routerLink="/welcome" routerLinkActive="active">Dashboard</a>
+                <a routerLink="/collection" routerLinkActive="active">Collection</a>
+            </nav>
+            <router-outlet></router-outlet>
     `,
     providers: [ CollectibleService ]
 })

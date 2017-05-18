@@ -1,0 +1,10 @@
+<div *ngIf="collectible">
+  <h2>{{collectible.name}} details!</h2>
+  <div>
+    <label>id: </label>{{collectible.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="collectible.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

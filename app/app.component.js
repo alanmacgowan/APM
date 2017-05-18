@@ -16,7 +16,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "\n        <h1>Angular2: {{pageTitle}}</h1>\n        <app-collection></app-collection>\n    ",
+        template: "\n        <h1>Angular2: {{pageTitle}}</h1>\n            <nav>\n                <a routerLink=\"/welcome\" routerLinkActive=\"active\">Dashboard</a>\n                <a routerLink=\"/collection\" routerLinkActive=\"active\">Collection</a>\n            </nav>\n            <router-outlet></router-outlet>\n    ",
         providers: [collectible_service_1.CollectibleService]
     })
 ], AppComponent);

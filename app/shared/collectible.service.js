@@ -21,6 +21,11 @@ var CollectibleService = (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    CollectibleService.prototype.getCollectibleDetail = function (id) {
+        return this._http.get(this._collectibleUrl)
+            .map(function (response) { return response.json()[0]; })
+            .catch(this.handleError);
+    };
     CollectibleService.prototype.handleError = function (error) {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server Error');
