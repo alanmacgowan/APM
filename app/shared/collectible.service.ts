@@ -15,7 +15,12 @@ export class CollectibleService{
                          .map((response: Response) => <Collectible[]>response.json())
                          .catch(this.handleError);
     }
-    
+
+    getCollectibleDetail(id: number): Observable<Collectible>{
+        return this._http.get(this._collectibleUrl)
+                         .map((response: Response) => <Collectible>response.json()[0])
+                         .catch(this.handleError);
+    }
     private handleError(error: Response){
         console.error(error);
         return Observable.throw(error.json().error || 'Server Error');

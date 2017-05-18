@@ -9,41 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var collectible_service_1 = require("../shared/collectible.service");
-var router_1 = require("@angular/router");
-var CollectionComponent = (function () {
-    function CollectionComponent(_collectibleService, location, router) {
+var CollectionDetailComponent = (function () {
+    function CollectionDetailComponent(_collectibleService, route, location) {
         this._collectibleService = _collectibleService;
+        this.route = route;
         this.location = location;
-        this.router = router;
-        this.products = [];
-        this.pageTitle = 'List of Products';
     }
-    CollectionComponent.prototype.ngOnInit = function () {
+    CollectionDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._collectibleService.getCollectible()
-            .subscribe(function (collectibles) { return _this.products = collectibles; }, function (error) { return _this.errorMessage = error; });
+        this.route.params
+            .switchMap(function (params) { return _this._collectibleService.getCollectibleDetail(+params['id']); })
+            .subscribe(function (collectible) { return _this.collectible = collectible; });
     };
-    CollectionComponent.prototype.onStarClicked = function (event) {
-        this.pageTitle = 'List of Products: ' + event;
-    };
-    CollectionComponent.prototype.goBack = function () {
+    CollectionDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
-    CollectionComponent.prototype.selectCollectible = function (id) {
-        this.router.navigate(['collection', id]);
-    };
-    return CollectionComponent;
+    return CollectionDetailComponent;
 }());
-CollectionComponent = __decorate([
+CollectionDetailComponent = __decorate([
     core_1.Component({
-        selector: 'app-collection',
-        templateUrl: 'app/collection/collection.component.html'
+        templateUrl: 'app/collection/collection-detail.component.html',
     }),
     __metadata("design:paramtypes", [collectible_service_1.CollectibleService,
-        common_1.Location,
-        router_1.Router])
-], CollectionComponent);
-exports.CollectionComponent = CollectionComponent;
-//# sourceMappingURL=collection.component.js.map
+        router_1.ActivatedRoute,
+        common_1.Location])
+], CollectionDetailComponent);
+exports.CollectionDetailComponent = CollectionDetailComponent;
+//# sourceMappingURL=collection-detail.component.js.map
