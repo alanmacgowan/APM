@@ -6,7 +6,7 @@ import { FormsModule }    from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { CollectionComponent } from './collection/collection.component';
-import { ProductTransform } from "./shared/producTransform.pipe";
+import { ProductTransform } from "./shared/pipes/producTransform.pipe";
 import { StarComponent } from "./shared/star.component";
 import { AppRoutingModule } from "./shared/app-routing.module";
 import { WelcomeComponent } from "./home/welcome.component";
